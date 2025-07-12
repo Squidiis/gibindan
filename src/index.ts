@@ -21,11 +21,28 @@ const commands = new Collection<string, Command>();
 const commandsArray: any[] = [];
 
 const commandsPath = path.join(__dirname, "commands");
-const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith(".ts") || file.endsWith(".js"));
+
+function getAllCommandFiles(dir: string, fileList: string[] = []): string[] {
+  const files = fs.readdirSync(dir);
+
+  for (const file of files) {
+    const filePath = path.join(dir, file);
+    const stat = fs.statSync(filePath);
+
+    if (stat.isDirectory()) {
+      getAllCommandFiles(filePath, fileList);
+    } else if (file.endsWith(".ts") || file.endsWith(".js")) {
+      fileList.push(filePath);
+    }
+  }
+
+  return fileList;
+}
+
+const commandFiles = getAllCommandFiles(commandsPath);
 
 async function loadCommands() {
-  for (const file of commandFiles) {
-    const filePath = path.join(commandsPath, file);
+  for (const filePath of commandFiles) {
     const command: Command = await import(filePath).then(m => m.default);
     if (!command?.data || !command?.execute) continue;
     commands.set(command.data.name, command);
@@ -52,8 +69,7 @@ async function loadCommands() {
           console.error("❌ Command error:", error);
           await interaction.reply({ content: "There was an error executing this command.", ephemeral: true });
         }
-      }
-      else if (
+      } else if (
         interaction.isModalSubmit() ||
         interaction.isStringSelectMenu() ||
         interaction.isChannelSelectMenu()
