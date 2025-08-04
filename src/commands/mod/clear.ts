@@ -11,7 +11,7 @@ import {
   ChannelType,
   EmbedBuilder,
 } from "discord.js";
-import { loadConfig } from "../../../config";
+import { loadConfig } from "@config";
 
 const config = loadConfig();
 const ENABLE_ERROR_LOG = process.env.ENABLE_ERROR_LOG === "true";

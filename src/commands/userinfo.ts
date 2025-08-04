@@ -5,7 +5,7 @@ import {
   User,
   GuildMember,
 } from "discord.js";
-import { loadConfig } from "../../config";
+import { loadConfig } from "@config";
 
 export default {
   data: new SlashCommandBuilder()

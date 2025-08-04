@@ -4,7 +4,7 @@ import {
   PermissionFlagsBits,
   EmbedBuilder,
 } from "discord.js";
-import { loadConfig } from "../../../config";
+import { loadConfig } from "@config";
 
 
 export default {
