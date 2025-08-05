@@ -31,9 +31,9 @@ This makes it easy to customize the bot to your own needs – use only the comma
 ## 🚀 Getting Started
 
 1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/yourbot.git
-   cd yourbot
+```bash
+git clone https://github.com/yourusername/yourbot.git
+cd yourbot
 ```
 
 2. Install dependencies
