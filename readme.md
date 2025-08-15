@@ -18,6 +18,8 @@ This bot comes with a set of useful moderation and server commands:
 - `/untimeout` – Removes timeout from a user
 - `/slowmode` – Sets slowmode in a channel
 - `/ping` – Measures the bot’s latency
+- `/role-add` – Assigns a role to a user
+- `/role-remove` – Removes a role from a user
 
 ## 🧩 Modular Command System
 
@@ -38,15 +40,12 @@ cd yourbot
 
 2. Install dependencies
 ```bash
-npm install 
+npm install
 ```
 
-3. Set up environment variables
-Create a .env file in the root folder:
+3. Set up environment variables Create a .env file in the root folder:
 ```env
 TOKEN=your-discord-bot-token
 CLIENT_ID=your-bot-client-id
 GUILD_ID=optional-for-dev-command-registration
 ```
-
-4. Run the bot
