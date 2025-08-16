@@ -49,3 +49,9 @@ TOKEN=your-discord-bot-token
 CLIENT_ID=your-bot-client-id
 GUILD_ID=optional-for-dev-command-registration
 ```
+
+If you need help contact me on discord
+<h4 align="center">
+    <a href="https://discord.gg/UKZkmeJYsA"><img src="https://img.shields.io/discord/1040624306062889032?color=blue&label=Discord&logo=discord&logoColor=white&style=for-the-badge" alt="Discord"></a>
+    <br>
+</h4>
