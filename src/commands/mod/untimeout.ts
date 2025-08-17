@@ -52,7 +52,7 @@ export default {
         }
 
         try {
-            await member.timeout(null, reason); // null = remove timeout
+            await member.timeout(null, reason); 
 
             const embed = new EmbedBuilder()
                 .setTitle("Timeout Removed")

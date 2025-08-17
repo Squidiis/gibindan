@@ -29,7 +29,7 @@ export default {
                 .setDescription("Reason for timeout.")
                 .setRequired(false)
         )
-        .setDefaultMemberPermissions(PermissionFlagsBits.ModerateMembers), // Rights for timeout usage
+        .setDefaultMemberPermissions(PermissionFlagsBits.ModerateMembers), 
 
     async execute(interaction: ChatInputCommandInteraction) {
         const user = interaction.options.getUser("user");
@@ -60,8 +60,8 @@ export default {
         }
 
         try {
-            const durationMs = duration * 60 * 1000; // Convert to milliseconds
-            const timeoutUntil = new Date(Date.now() + durationMs); // End time
+            const durationMs = duration * 60 * 1000; 
+            const timeoutUntil = new Date(Date.now() + durationMs); 
             await member.timeout(durationMs, reason);
 
             const embed = new EmbedBuilder()
